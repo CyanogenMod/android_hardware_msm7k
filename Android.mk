@@ -16,7 +16,11 @@
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 
+ifneq ($(TARGET_BOARD_PLATFORM),exynos4)
 common_msm_dirs := librpc dspcrashd libstagefrighthw
+endif
+
+common_msm_dirs := librpc dspcrashd
 msm7k_dirs := $(common_msm_dirs) boot
 
 ifeq ($(TARGET_BOARD_PLATFORM),msm7x27)
